@@ -81,96 +81,188 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
     </div>
   );
 }
-
-function DashboardPage({ onNavigate }: { onNavigate: (page: Page) => void }) {
+   function DashboardPage({ onNavigate }) {
   return (
-    <div className="flex-1 flex flex-col bg-gray-50 overflow-y-auto">
-      {/* Header */}
-      <div className="bg-white px-6 pt-12 pb-6 rounded-b-3xl shadow-sm">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Hola, Sofía 👋</h1>
-            <div className="flex items-center mt-2 space-x-2">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                <CheckCircle2 className="w-3 h-3 mr-1" />
-                Socio Activo
-              </span>
-            </div>
+    <div className="bg-black min-h-screen text-white flex justify-center">
+
+      <div className="w-[380px] p-6 space-y-6 pb-24">
+
+        {/* HEADER */}
+        <div className="flex justify-between items-center">
+
+          <h1 className="text-2xl font-black tracking-widest text-green-400">
+              CÚSPIDE
+          </h1>
+
+          <div className="flex gap-4 text-xl">
+            <span>🔖</span>
+            <span>🔍</span>
           </div>
-          <button onClick={() => onNavigate('login')} className="p-2 text-gray-400 hover:text-gray-600 bg-gray-50 rounded-full">
-            <LogOut className="w-5 h-5" />
-          </button>
+
         </div>
-        
-        <div className="mt-6 bg-gray-900 rounded-2xl p-5 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-green-500 rounded-full opacity-20 blur-2xl"></div>
-          <p className="text-sm text-gray-300 mb-1">Estado de cuenta</p>
-          <p className="font-medium text-lg mb-4">Membresía vence en 12 días</p>
-          <button className="bg-green-600 hover:bg-green-500 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors w-full">
-            Renovar membresía
+
+
+        {/* TABS */}
+        <div className="flex gap-3">
+
+          <button className="px-4 py-2 bg-zinc-800 rounded-full text-sm">
+            ENTRENAMIENTOS
           </button>
+
+          <button className="px-4 py-2 bg-white text-black rounded-full text-sm font-semibold">
+            PLANES
+          </button>
+
+          <button className="px-4 py-2 bg-zinc-800 rounded-full text-sm">
+            COMUNIDAD
+          </button>
+
         </div>
+
+
+        {/* DAYS PER WEEK */}
+        <div>
+
+          <h3 className="text-xs text-gray-400 mb-3 tracking-wider">
+            DIAS 
+          </h3>
+
+          <div className="grid grid-cols-3 gap-3">
+
+            <div className="bg-zinc-800 rounded-xl p-5 text-center">
+              <p className="text-2xl font-bold">3</p>
+              <p className="text-xs text-gray-400">Day</p>
+            </div>
+
+            <div className="bg-zinc-800 rounded-xl p-5 text-center">
+              <p className="text-2xl font-bold">4</p>
+              <p className="text-xs text-gray-400">Day</p>
+            </div>
+
+            <div className="bg-zinc-800 rounded-xl p-5 text-center">
+              <p className="text-2xl font-bold">5</p>
+              <p className="text-xs text-gray-400">Day</p>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* BY GOAL */}
+        <div>
+
+          <h3 className="text-xs text-gray-400 mb-3 tracking-wider">
+            BY GOAL
+          </h3>
+
+          <div className="grid grid-cols-2 gap-4">
+
+
+            {/* ATHLETICISM */}
+            <div className="relative rounded-xl overflow-hidden">
+
+              <img
+                src="/athletic.jpg"
+              className="w-full h-36 object-cover brightness-110"
+              />
+
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              <p className="absolute bottom-3 left-3 font-bold text-sm">
+                ATHLETICISM
+              </p>
+
+            </div>
+
+
+            {/* CONDITIONING */}
+            <div className="relative rounded-xl overflow-hidden">
+
+              <img
+                src="/conditioning.jpg"
+                className="w-full h-36 object-cover brightness-150"
+              />
+
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              <p className="absolute bottom-3 left-3 font-bold text-sm">
+                CONDITIONING
+              </p>
+
+            </div>
+
+
+            {/* STRENGTH */}
+            <div className="relative rounded-xl overflow-hidden">
+
+              <img
+                src="/strength.jpg"
+               className="w-full h-36 object-cover brightness-150"
+              />
+
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              <p className="absolute bottom-3 left-3 font-bold text-sm">
+                STRENGTH
+              </p>
+
+            </div>
+
+
+            {/* HIIT */}
+            <div className="relative rounded-xl overflow-hidden">
+
+              <img
+                src="/hiit.jpg"
+                className="w-full h-36 object-cover brightness-150"
+              />
+
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              <p className="absolute bottom-3 left-3 font-bold text-sm">
+                HIIT
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
       </div>
 
-      <div className="p-6 space-y-6">
-        {/* Card 1: Rutina */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-gray-900 flex items-center">
-              <Calendar className="w-5 h-5 mr-2 text-green-600" />
-              Rutina del Día
-            </h2>
-          </div>
-          <p className="text-gray-600 mb-5 font-medium text-lg">Espalda & Bíceps</p>
-          <button 
-            onClick={() => onNavigate('routine')}
-            className="w-full bg-green-50 text-green-700 hover:bg-green-100 font-semibold py-2.5 rounded-xl transition-colors"
-          >
-            Ver rutina
-          </button>
-        </div>
 
-        {/* Card 2: Progreso */}
-        <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-gray-900 flex items-center">
-              <TrendingUp className="w-5 h-5 mr-2 text-green-600" />
-              Progreso
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="bg-gray-50 p-3 rounded-xl">
-              <p className="text-xs text-gray-500 mb-1">Peso actual</p>
-              <p className="font-bold text-gray-900">58 kg</p>
-            </div>
-            <div className="bg-gray-50 p-3 rounded-xl">
-              <p className="text-xs text-gray-500 mb-1">PR Sentadilla</p>
-              <p className="font-bold text-gray-900">90 kg</p>
-            </div>
-          </div>
+      {/* NAVBAR */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[360px] bg-zinc-900 border border-zinc-800 rounded-2xl flex justify-around py-3 text-xs shadow-lg">
 
-          <div className="mb-6">
-            <div className="flex justify-between text-sm mb-2">
-              <span className="text-gray-600 font-medium">Entrenamientos este mes</span>
-              <span className="font-bold text-gray-900">14 / 20</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-2.5">
-              <div className="bg-green-600 h-2.5 rounded-full" style={{ width: '75%' }}></div>
-            </div>
-          </div>
+        <button className="flex flex-col items-center text-white">
+          🧭
+          <span>EXPLORE</span>
+        </button>
 
-          <button 
-            onClick={() => onNavigate('progress')}
-            className="w-full bg-green-50 text-green-700 hover:bg-green-100 font-semibold py-2.5 rounded-xl transition-colors"
-          >
-            Ver evolución
-          </button>
-        </div>
+        <button className="flex flex-col items-center text-gray-500">
+          ➕
+          <span>CREATE</span>
+        </button>
+
+        <button className="flex flex-col items-center text-gray-500">
+          📊
+          <span>PROGRESS</span>
+        </button>
+
+        <button className="flex flex-col items-center text-gray-500">
+          ⚙️
+          <span>SETTINGS</span>
+        </button>
+
       </div>
+
     </div>
   );
 }
+
 
 function RoutinePage({ onBack }: { onBack: () => void }) {
   const exercises = [
